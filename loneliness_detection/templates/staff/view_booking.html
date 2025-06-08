@@ -1,0 +1,27 @@
+{% extends "staff/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>BOOKED ON</th>
+        <th>DATE TIME</th>
+        <th>STUDENT INFO</th>
+        <th>COUNSELLOR INFO</th>
+        <th>STATUS</th>
+        <th>ATTENDANCE</th>
+        <th>PROGRESS</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.booked_on }}</td>
+        <td>{{ i.date }}  {{ i.time }}</td>
+        <td>{{ i.STUDENT.name }}<br><i>{{ i.STUDENT.COURSE.crs_name }} {{ i.STUDENT.sem }}</i></td>
+        <td>{{ i.TEAM.name }}<br>{{ i.TEAM.phone_number }}</td>
+        <td>{{ i.status }}</td>
+        <td>{{ i.att }}</td>
+        <td>{{ i.prog }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

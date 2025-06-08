@@ -1,0 +1,41 @@
+{% extends "counselling_team/index.html" %}
+{% block body %}
+
+<form method="post" action="/team_update_booking_post/{{ id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Date</td>
+            <td><input type="date" name="t1" id="t1" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td><input type="time" name="t2" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Meet link</td>
+            <td><input type="text" name="t3" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="ADD" class="btn btn-success" /></td>
+        </tr>
+    </table>
+</form>
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+   dd = '0' + dd;
+}
+
+if (mm < 10) {
+   mm = '0' + mm;
+}
+
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("t1").setAttribute("min", today);
+</script>
+{% endblock %}

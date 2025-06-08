@@ -1,0 +1,16 @@
+{% extends "counselling_team/index.html" %}
+{% block body %}
+
+<form method="post" action="/team_add_progress_post/{{ id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Progress</td>
+            <td><textarea rows="5" cols="45" name="t1" class="form-control" required ></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="ADD" class="btn btn-success" /></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

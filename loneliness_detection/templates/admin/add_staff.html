@@ -1,0 +1,41 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<form method="post" action="/adm_add_staff_post">
+    {% csrf_token %}
+     <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Staff name</td>
+            <td><input type="text" name="t1" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="t2" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="t3" class="form-control" maxlength="10" pattern="[6789][0-9]{9}" required /></td>
+        </tr>
+        <tr>
+            <td>Qualification</td>
+            <td><input type="text" name="t4" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Experience</td>
+            <td><input type="text" name="t5" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td><select name="select" class="form-control">
+                {% for i in data %}
+                    <option value="{{ i.id }}">{{ i.dep_name }}</option>
+                {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="ADD" class="btn btn-success" /></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

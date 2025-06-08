@@ -1,0 +1,26 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<form method="post" action="/adm_edit_course_post/{{ data.id }}">
+    {% csrf_token %}
+     <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Course name</td>
+            <td><input type="text" name="t1" class="form-control" required value="{{ data.crs_name }}" /></td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td><select name="select" class="form-control">
+                {% for i in data2 %}
+                    <option value="{{ i.id }}" {% if i.id == data.DEPARTMENT_id %} selected {% endif %}>{{ i.dep_name }}</option>
+                {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="UPDATE" class="btn btn-success" /></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

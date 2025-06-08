@@ -1,0 +1,21 @@
+{% extends "counselling_team/index.html" %}
+{% block body %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Staff name</td>
+            <td>{{ data.name }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ data.email }}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{ data.phone_number }}</td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>COURSE NAME</th>
+        <th>DEPARTMENT NAME</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.crs_name }}</td>
+        <td>{{ i.DEPARTMENT.dep_name }}</td>
+        <td><a href="/adm_edit_course/{{ i.id }}#abc" class="btn btn-info">Edit</a> </td>
+        <td><a href="/adm_delete_course/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

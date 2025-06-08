@@ -1,0 +1,19 @@
+{% extends "staff/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>SCORE</th>
+        <th>CONDITION</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.score }}</td>
+        <td>{{ i.condition }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

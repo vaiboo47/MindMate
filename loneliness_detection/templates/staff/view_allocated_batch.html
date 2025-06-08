@@ -1,0 +1,24 @@
+{% extends "staff/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>COURSE</th>
+        <th>DEPARTMENT</th>
+        <th>SEMESTER</th>
+        <th>STUDENTS</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.COURSE.crs_name }}</td>
+        <td>{{ i.COURSE.DEPARTMENT.dep_name }}</td>
+        <td>{{ i.sem }}</td>
+        <td><a href="/staff_view_students/{{ i.COURSE_id }}/{{ i.sem }}#abc" class="btn btn-success">All Students</a> </td>
+        <td><a href="/staff_view_depress_students/{{ i.COURSE_id }}/{{ i.sem }}#abc" class="btn btn-danger">Depressed Students</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

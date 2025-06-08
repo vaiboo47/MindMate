@@ -1,0 +1,26 @@
+{% extends "staff/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>TITLE</th>
+        <th>CONTENT</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.title }}</td>
+        <td>
+            <video width="320" height="240" controls>
+              <source src="{{ i.content }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </td>
+        <td><a href="/staff_delete_motivation/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Remove</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

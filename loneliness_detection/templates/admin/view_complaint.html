@@ -1,0 +1,29 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>STUDENT INFO</th>
+        <th>COMPLAINT</th>
+        <th>REPLY</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.STUDENT.name }}<BR>
+            ( {{ i.STUDENT.COURSE.crs_name }} , Semester {{ i.STUDENT.sem }} )
+        </td>
+        <td>{{ i.complaint }}</td>
+        <td>
+            {% if i.reply == 'pending' %}
+                <a href="/adm_send_reply/{{ i.id }}#abc" >Send Reply</a>
+            {% else %}
+                {{ i.reply }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

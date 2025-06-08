@@ -1,0 +1,21 @@
+{% extends "staff/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phone_number }}</td>
+        <td><a href="/staff_make_booking/{{ sid }}/{{ i.id }}#abc" class="btn btn-info">Book</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

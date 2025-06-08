@@ -1,0 +1,21 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>STAFF INFO</th>
+        <th>SUGGESTIONS</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.STAFF.name }}<BR>
+            ( {{ i.STAFF.DEPARTMENT.dep_name }})
+        </td>
+        <td>{{ i.feedback }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mindmate">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/mental_health"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/mental_health"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mindmate"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".camera"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Student_home"
+            android:exported="false"
+            android:label="@string/title_activity_student_home"
+            android:theme="@style/Theme.Mindmate.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Profile" />
+        <activity android:name=".View_diary" />
+        <activity android:name=".add_diary" />
+        <activity android:name=".View_complaint" />
+        <activity android:name=".send_complaint" />
+        <activity android:name=".View_motivation" />
+        <activity android:name=".View_booking" />
+        <activity android:name=".View_schedule" />
+        <activity android:name=".Test" />
+        <activity android:name=".Test2" />
+        <activity android:name=".questionnaire" />
+    </application>
+
+</manifest>

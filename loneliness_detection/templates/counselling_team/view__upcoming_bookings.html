@@ -1,0 +1,32 @@
+{% extends "counselling_team/index.html" %}
+{% block body %}
+
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>STUDENT NAME</th>
+        <th>COURSE</th>
+        <th>SEMESTER</th>
+        <th>BOOKED ON</th>
+        <th>SCHEDULE DETAILS</th>
+        <th>MEET LINK</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.STUDENT.name }}</td>
+        <td>{{ i.STUDENT.COURSE.crs_name }}</td>
+        <td>{{ i.STUDENT.sem }}</td>
+        <td>{{ i.booked_on }}</td>
+        <td>Date : {{ i.date }}<br>Time : {{ i.time }}</td>
+        <td><a href="{{ i.meet_link }}" target="_blank">{{ i.meet_link }}</a> </td>
+        <td>
+            <p><a href="/team_update_attendance/{{ i.id }}/Present" class="btn btn-success" onclick="return confirm('Are you sure?')">Present</a></p>
+            <p><a href="/team_update_attendance/{{ i.id }}/Absent" class="btn btn-danger" onclick="return confirm('Are you sure?')">Absent</a></p>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

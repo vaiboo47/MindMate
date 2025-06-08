@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    tools:ignore="MissingDefaultResource">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/user"
+            android:title="Profile" />
+        <item
+            android:id="@+id/diary"
+            android:icon="@drawable/diary"
+            android:title="Diary" />
+        <item
+            android:id="@+id/complaint"
+            android:icon="@drawable/complain"
+            android:title="Complaint" />
+        <item
+            android:id="@+id/motiv"
+            android:icon="@drawable/video"
+            android:title="Motivation contents" />
+        <item
+            android:id="@+id/booking"
+            android:icon="@drawable/psychiatrist"
+            android:title="Bookings" />
+        <item
+            android:id="@+id/schedule"
+            android:icon="@drawable/calendar"
+            android:title="Schedules" />
+        <item
+            android:id="@+id/chat"
+            android:icon="@drawable/chat"
+            android:title="Chat with tutor" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+    </group>
+</menu>

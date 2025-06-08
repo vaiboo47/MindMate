@@ -1,0 +1,161 @@
+ {
+    "ourIntents": [
+
+             {"tag": "age",
+              "patterns": ["how old are you?"],
+              "responses": ["I am 2 years old and my birthday was yesterday"]
+             },
+              {"tag": "greeting",
+              "patterns": [ "Hi", "Hello", "Hey"],
+              "responses": ["Hi there", "Hello", "Hi :)"]
+             },
+              {"tag": "goodbye",
+              "patterns": [ "bye", "later"],
+              "responses": ["Bye", "take care"]
+             },
+             {"tag": "name",
+              "patterns": ["what's your name?", "who are you?"],
+              "responses": ["I have no name yet", "You can give me one, and I will appreciate it"]
+             },
+             {  "tag": "exit",
+                "patterns": ["quit", "exit"],
+                "responses": ["Okay, Good bye!!", "Bye, Have a nice day "]
+            },
+            {
+               "tag": "greeting",
+               "patterns": [
+                   "Hi there",
+                   "How are you",
+                   "Is anyone there?",
+                   "Hey",
+                   "Hola",
+                   "Hello",
+                   "Good day",
+                   "Namaste",
+                   "yo"
+               ],
+               "responses": [
+                   "Hello",
+                   "Good to see you again",
+                   "Hi there, how can I help?"
+               ],
+               "context": [
+                   ""
+               ]
+           },
+           {
+               "tag": "goodbye",
+               "patterns": [
+                   "Bye",
+                   "See you later",
+                   "Goodbye",
+                   "Get lost",
+                   "Till next time",
+                   "bbye"
+               ],
+               "responses": [
+                   "See you!",
+                   "Have a nice day",
+                   "Bye! Come back again soon."
+               ],
+               "context": [
+                   ""
+               ]
+           },
+           {
+               "tag": "thanks",
+               "patterns": [
+                   "Thanks",
+                   "Thank you",
+                   "That's helpful",
+                   "Awesome, thanks",
+                   "Thanks for helping me"
+               ],
+               "responses": [
+                   "Happy to help!",
+                   "Any time!",
+                   "My pleasure"
+               ],
+               "context": [
+                   ""
+               ]
+           },
+           {
+               "tag": "noanswer",
+               "patterns": [],
+               "responses": [
+                   "Sorry, can't understand you",
+                   "Please give me more info",
+                   "Not sure I understand"
+               ],
+               "context": [
+                   ""
+               ]
+           },
+
+
+           {
+               "tag": "programmer",
+               "patterns": [
+                   "Who made you",
+                   "who designed you",
+                   "who programmed you"
+               ],
+               "responses": [
+                   "I was made by Rithul."
+               ]
+           },
+
+           {
+               "tag": "anxiety",
+               "patterns": [
+                   "What is anxiety?", "symptoms of anxiety", "how do i know if iam anxious", "details about anxiety"
+               ],
+               "responses": [
+                   "Anxiety is a feeling of unease, such as worry or fear, that can be mild or severe. It's a natural response to stress, but when it becomes overwhelming and persistent, it might be a sign of an anxiety disorder. Symptoms can include constant worry, restlessness, difficulty concentrating, and physical symptoms like a racing heart."
+               ]
+           },
+
+           {
+               "tag": "stress",
+               "patterns": [
+                   "How can I manage stress?", "stress management", "managing stress", "feeling stressed"
+               ],
+               "responses": [
+                   "Managing stress can be done through several techniques, such as deep breathing exercises, mindfulness, physical exercise, and setting aside time to relax. It's also helpful to organize your tasks and take breaks when needed. Finding healthy ways to cope with stress, like talking to someone you trust, can make a big difference."
+               ]
+           },
+
+           {
+               "tag": "depression",
+               "patterns": [
+                   "What is depression?",  "symptoms of depression"
+               ],
+               "responses": [
+                   "Depression is a mood disorder that can affect how you feel, think, and handle daily activities. It's more than just feeling sad—it can lead to persistent feelings of hopelessness, loss of interest in things you once enjoyed, changes in appetite, and trouble sleeping. If you're experiencing these symptoms, it's important to seek professional support."
+               ]
+           },
+
+
+           {
+               "tag": "consultation",
+               "patterns": [
+                   "How do I know if I need professional help?",  "Do i need expert advice on mental health?"
+               ],
+               "responses": [
+                   "If your mental health symptoms are interfering with your daily life—whether that’s through persistent sadness, worry, difficulty functioning at work or school, or changes in behavior—it may be time to seek professional help. A mental health professional can help determine the best course of action for your situation."
+               ]
+           },
+
+
+           {
+               "tag": "sleeping",
+               "patterns": [
+                   "How can I improve my sleep if I'm feeling anxious?",  "Not getting much sleep."
+               ],
+               "responses": [
+                   "Improving sleep when you're feeling anxious can be challenging, but there are a few strategies that might help: try establishing a bedtime routine, limit caffeine intake, practice relaxation techniques like deep breathing, and avoid screen time before bed. Creating a calming environment, like dimming the lights and making your bedroom a peaceful place, can also make a difference."
+               ]
+           }
+
+]}

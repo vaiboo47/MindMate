@@ -1,0 +1,26 @@
+{% extends "counselling_team/index.html" %}
+{% block body %}
+
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>STUDENT NAME</th>
+        <th>COURSE</th>
+        <th>SEMESTER</th>
+        <th>BOOKED ON</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.STUDENT.name }}</td>
+        <td>{{ i.STUDENT.COURSE.crs_name }}</td>
+        <td>{{ i.STUDENT.sem }}</td>
+        <td>{{ i.booked_on }}</td>
+        <td>
+            <a href="/team_update_booking/{{ i.id }}#abc" class="btn btn-info">Allocate time</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<table class="table table-bordered">
+    <tr style="background: #000;color: #fff;">
+        <th>SL NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+        <th>ADDRESS</th>
+        <th>COURSE</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phone_number }}</td>
+        <td>{{ i.house_name }}<br>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>
+        <td>{{ i.COURSE.crs_name }}, Semester {{ i.sem }}</td>
+        <td><a href="/adm_edit_student/{{ i.id }}#abc" class="btn btn-info">Edit</a> </td>
+        <td><a href="/adm_delete_student/{{ i.LOGIN_id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

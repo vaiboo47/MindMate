@@ -1,0 +1,34 @@
+{% extends "staff/index.html" %}
+{% block body %}
+
+<form method="post" action="">
+    {% csrf_token %}
+
+    <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Staff name</td>
+            <td>{{ data.name }}</td>
+        </tr>
+        <tr>
+            <td>Department name</td>
+            <td>{{ data.DEPARTMENT.dep_name }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ data.email }}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{ data.phone_number }}</td>
+        </tr>
+        <tr>
+            <td>Qualification</td>
+            <td>{{ data.qualification }}</td>
+        </tr>
+        <tr>
+            <td>Experience</td>
+            <td>{{ data.experience }}</td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

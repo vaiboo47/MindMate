@@ -1,0 +1,53 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<form method="post" action="/adm_edit_student_post/{{ data.id }}">
+    {% csrf_token %}
+     <table class="table table-bordered" style="width: 600px;" align="center">
+        <tr>
+            <td>Student name</td>
+            <td><input type="text" name="t1" class="form-control" required value="{{ data.name }}"/></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="t2" class="form-control" required value="{{ data.email }}"/></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="t3" class="form-control" maxlength="10" pattern="[6789][0-9]{9}" required value="{{ data.phone_number }}"/></td>
+        </tr>
+        <tr>
+            <td>Housename</td>
+            <td><input type="text" name="t4" class="form-control" required value="{{ data.house_name }}" /></td>
+        </tr>
+        <tr>
+            <td>Place</td>
+            <td><input type="text" name="t5" class="form-control" required value="{{ data.place }}"/></td>
+        </tr>
+        <tr>
+            <td>Post</td>
+            <td><input type="text" name="t6" class="form-control" required value="{{ data.post }}" /></td>
+        </tr>
+        <tr>
+            <td>Pin</td>
+            <td><input type="text" name="t7" class="form-control" maxlength="6" pattern="[6][0-9]{5}" required value="{{ data.pin }}"/></td>
+        </tr>
+        <tr>
+            <td>Sem</td>
+            <td><select class="form-control" name="select2">
+                <option {% if data.sem == "1" %} selected {% endif %}>1</option>
+                <option {% if data.sem == "2" %} selected {% endif %}>2</option>
+                <option {% if data.sem == "3" %} selected {% endif %}>3</option>
+                <option {% if data.sem == "4" %} selected {% endif %}>4</option>
+                <option {% if data.sem == "5" %} selected {% endif %}>5</option>
+                <option {% if data.sem == "6" %} selected {% endif %}>6</option>
+                <option {% if data.sem == "7" %} selected {% endif %}>7</option>
+                <option {% if data.sem == "8" %} selected {% endif %}>8</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="UPDATE" class="btn btn-success" /></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
